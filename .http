@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/shortner HTTP/1.1
+content-type: application/json
+
+{
+   "longUrl":"https://jasonwatmore.com/post/2020/07/22/nodejs-express-api-request-schema-validation-with-joi"
+}
+
+###
+
