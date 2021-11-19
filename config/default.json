@@ -1,0 +1,6 @@
+{   
+    "name":"Short URl",
+    "mongoDbConnString":"",
+    "host":"localhost",
+    "port":"3000"
+}
