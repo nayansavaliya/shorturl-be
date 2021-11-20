@@ -7,7 +7,7 @@ const route = express.Router();
 
 
 const UrlMapping = require('./../models/urlMapping');
-const asyncErrorMiddleware = require("./../middleware/asynErrormiddleware")
+const asyncErrorMiddleware = require("./../middleware/asyncErrormiddleware")
 
 
 const baseUrl = config.get('method') + ':' + config.get('host') + ':' + config.get('port')
@@ -56,6 +56,12 @@ route.post('/', asyncErrorMiddleware(async (req, res) => {
 
  }));
 
- 
+ // Get api to get all mappings and its stats
+ route.get('/stats', asyncErrorMiddleware(async (req, res) => {
+    
+    const mappings = await UrlMapping.find({}).select({longUrl:1,shortUrl:1,hits:1,shorteningAtempts:1,_id:0});
+    res.status(200).send(mappings)
+ }));
 
+ 
  module.exports = route;

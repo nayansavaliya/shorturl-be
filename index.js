@@ -7,7 +7,7 @@ const validUrl = require('valid-url');
 
 const shortner = require('./routes/shortner');
 const UrlMapping = require('./models/urlMapping');
-const asyncErrorMiddleware = require("./middleware/asynErrormiddleware")
+const asyncErrorMiddleware = require("./middleware/asyncErrormiddleware")
 
 
 
@@ -30,9 +30,10 @@ app.get('/:unique', asyncErrorMiddleware(async (req, res) => {
             uniqueId: req.params.unique
         })
     if (urlMapping) {
+        const result = await UrlMapping.findByIdAndUpdate({ _id: urlMapping.id }, {$inc: { hits: 1 }});
         return res.redirect(urlMapping.longUrl)
     } else {
-        return res.status(404).json('URL Not Found')
+        return res.status(404).sendFile( './404.html', {root: __dirname })
     }
     }
  ));
