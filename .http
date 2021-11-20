@@ -1,9 +1,15 @@
-POST http://localhost:3000/api/shortner HTTP/1.1
+POST http://0.0.0.0:80/api/shortner HTTP/1.1
 content-type: application/json
 
 {
-   "longUrl":"https://jasonwatmore.com/post/2020/07/22/nodejs-express-api-request-schema-validation-with-joi"
+   "longUrl":"https://github.com/users/nayansavaliya/packages/container/package/shorturl_be"
 }
 
 ###
+POST http://52.161.94.94:80/api/shortner HTTP/1.1
+content-type: application/json
+
+{
+   "longUrl":"https://github.com/users/nayansavaliya/packages/container/package/shorturl_be"
+}
 

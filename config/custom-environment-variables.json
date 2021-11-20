@@ -1,3 +1,5 @@
 {   
-    "mongoDbConnString":"shorturl_mongoDbConnString"
+    "mongoDbConnString":"shorturl_mongoDbConnString",
+    "baseUrl":"shorturl_baseurl",
+    "port":"shorturl_port"
 }

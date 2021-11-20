@@ -10,7 +10,7 @@ const UrlMapping = require('./../models/urlMapping');
 const asyncErrorMiddleware = require("./../middleware/asyncErrormiddleware")
 
 
-const baseUrl = config.get('method') + ':' + config.get('host') + ':' + config.get('port')
+const baseUrl = config.get('baseUrl')
 
 const newUrlSchema = Joi.object({
     longUrl: Joi.string().required()

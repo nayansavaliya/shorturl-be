@@ -2,6 +2,7 @@
     "name":"Short URl",
     "mongoDbConnString":"",
     "host":"localhost",
-    "port":"3000",
-    "method":"http"
+    "port":"80",
+    "method":"http",
+    "baseUrl":"http://localhost:80"
 }

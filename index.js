@@ -17,7 +17,7 @@ const app = express();
 
 // Db connection
 mongoose.connect(config.get('mongoDbConnString'))
-.then(()=> console.log("Connection established to MongoDD"))
+.then(()=> console.log("Connection established to MongoDB"))
 .catch(err => console.log("Failed while connecting MongoDB"))
 
 //middlewares
@@ -47,7 +47,7 @@ app.get('/:unique', asyncErrorMiddleware(async (req, res) => {
 
 
 //Starting app server
-app.listen(config.get('port'),config.get('host'), () => console.log("Listening port 3000…"));
+app.listen(config.get('port'), () => console.log("Listening port" + config.get('port')));
 
 
 

@@ -1,14 +1,14 @@
 {
-  "name": "shorturl-be",
+  "name": "shorturl_web_app_be",
   "version": "1.0.0",
   "description": "To shorten the URL",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start-custom": "nodemon index.js"
   },
-  "author": "Nayan Savaliya",
+  "author": "Nayan Savaliya [nayan.j.savaliya@gmail.com]",
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.6",
