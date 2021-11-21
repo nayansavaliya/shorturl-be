@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('config');
 const validUrl = require('valid-url');
+const cors = require('cors')
 
 
 
@@ -21,6 +22,7 @@ mongoose.connect(config.get('mongoDbConnString'))
 .catch(err => console.log("Failed while connecting MongoDB"))
 
 //middlewares
+app.use(cors())
 app.use(express.json());
 app.use('/api/shortner',shortner)
 
